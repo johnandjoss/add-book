@@ -53,7 +53,7 @@ $(document).ready(function() {
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
     $(".contact").last().click(function() {
-      $("#show-contact").show();
+      $("#show-contact").fadeIn("slow");
       $("#show-contact h2").text(newContact.firstName + " " + newContact.lastName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
@@ -61,12 +61,8 @@ $(document).ready(function() {
          newContact.addresses.forEach(function(address) {
            $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
          });
-         $("#addresses li").mouseenter(function() {
-           $(this).css("background-color", "red");
-         });
-         $("#addresses li").mouseleave(function() {
-           $(this).css("background-color", "white");
-         });
+
+
          resetFields();
     });
   });
